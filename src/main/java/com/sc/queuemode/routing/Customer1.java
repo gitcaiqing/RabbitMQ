@@ -27,7 +27,7 @@ public class Customer1 {
 		channel.queueDeclare(QUEUE_NAME, true, false, false, null);
 		
 		//队列绑定交换机，指定路由routingKey
-		//结束路由routingKey为info和warning的消息
+		//接收路由routingKey为info和warning的消息
 		channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "info");
 		channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "warning");
 		

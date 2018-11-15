@@ -1,7 +1,11 @@
 其实严格来讲，RabbitMQ只有三种模式：“简单模式”、“work模式”以及“交换机模式”。
 对于交换机模式来说，又分三种：“订阅模式”、“路由模式”、“通配符模式”，而他们之间的不同就是交换机类型的不同。
 交换机exchange有4个类型：direct，topic，fanout，header。
-
+ 	<!--标准的AMQP Exchange有4种: Direct, Topic, Headers, Fanout, 根据实际需要选择。-->
+    <!--Direct: 如果消息的routing key与bingding的routing key直接匹配的话, 消息将会路由到该队列上。-->
+    <!--Topic: 如果消息的routing key与bingding的routing key符合通配符匹配的话, 消息将会路由到该队列上。-->
+    <!--Headers: 如果消息参数表中的头信息和值都与binding参数表中相匹配, 消息将会路由到该队列上。-->
+    <!--Fanout: 不管消息的routing key和参数表的头信息/值是什么, 消息将会路由到该队列上。-->
 几个方法参数说明
 /**
  * queueDeclare(String queue, boolean durable, boolean exclusive, boolean autoDelete,Map<String, Object> arguments)
